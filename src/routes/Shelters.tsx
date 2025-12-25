@@ -7,7 +7,7 @@ import { Card } from '../components/ui/Card';
 import { formatDistanceToNow } from 'date-fns';
 
 export function Shelters() {
-  const { liveDataEnabled, shelters, sampleShelters, femaShelters } = useAppStore();
+  const { liveDataEnabled, sampleShelters, femaShelters } = useAppStore();
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
   const [statusFilter, setStatusFilter] = useState<string>('all');
@@ -40,7 +40,6 @@ export function Shelters() {
     return true;
   });
 
-  const states = Array.from(new Set(displayShelters.map((s) => s.state).filter(Boolean))).sort();
 
   return (
     <div className="space-y-6">

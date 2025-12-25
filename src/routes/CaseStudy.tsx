@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { Card } from '../components/ui/Card';
 import { Badge } from '../components/ui/Badge';
-import { Tabs } from '../components/ui/Tabs';
 
 interface ScreenshotImageProps {
   src: string;

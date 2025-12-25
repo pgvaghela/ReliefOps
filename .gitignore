@@ -23,3 +23,6 @@ dist-ssr
 *.sln
 *.sw?
 
+# Git history scripts (keep local only)
+create_history.sh
+GITHUB_SETUP.md

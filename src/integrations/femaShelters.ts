@@ -83,7 +83,7 @@ export async function fetchFemaOpenShelters(state: string): Promise<Shelter[]> {
       // Calculate capacity percentage if both values are available
       const capacityTotal = props.evacuation_capacity ?? null;
       const capacityUsed = props.total_population ?? null;
-      let finalStatus = status;
+      let finalStatus: 'operational' | 'at-capacity' | 'overflow' | 'critical' = status as 'operational' | 'at-capacity' | 'overflow' | 'critical';
       if (capacityTotal !== null && capacityUsed !== null && capacityTotal > 0) {
         const percent = (capacityUsed / capacityTotal) * 100;
         if (percent > 95) finalStatus = 'critical';

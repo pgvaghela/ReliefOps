@@ -14,7 +14,6 @@ export function Overview() {
   const {
     liveDataEnabled,
     selectedState,
-    shelters,
     sampleShelters,
     sampleAlerts,
     nwsAlerts,
@@ -51,7 +50,6 @@ export function Overview() {
   // Shelter stats
   const openShelters = displayShelters.filter((s) => s.status === 'operational');
   const closedShelters = displayShelters.filter((s) => s.status === 'critical');
-  const atCapacityShelters = displayShelters.filter((s) => s.status === 'at-capacity');
   
   // Calculate capacity stats only if data is available
   const sheltersWithCapacity = displayShelters.filter(

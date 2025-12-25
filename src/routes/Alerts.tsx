@@ -1,4 +1,3 @@
-import { useNavigate } from 'react-router-dom';
 import { useAppStore } from '../store/useAppStore';
 import { Card } from '../components/ui/Card';
 import { Badge } from '../components/ui/Badge';
@@ -9,7 +8,6 @@ import { useState } from 'react';
 import type { Alert } from '../types';
 
 export function Alerts() {
-  const navigate = useNavigate();
   const {
     liveDataEnabled,
     selectedState,

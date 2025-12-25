@@ -1,4 +1,3 @@
-import { Badge } from './ui/Badge';
 import { StatusPill } from './ui/StatusPill';
 import { formatRelativeTimeShort } from '../utils/time';
 

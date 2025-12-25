@@ -8,7 +8,6 @@ import { StatusPill } from '../components/ui/StatusPill';
 import { Tabs } from '../components/ui/Tabs';
 import { Modal } from '../components/ui/Modal';
 import { formatRelativeTime, formatRelativeTimeShort } from '../utils/time';
-import { formatDistanceToNow } from 'date-fns';
 
 export function IncidentDetail() {
   const { id } = useParams<{ id: string }>();
@@ -17,7 +16,6 @@ export function IncidentDetail() {
     incidents,
     nwsAlerts,
     sampleAlerts,
-    liveDataEnabled,
     assignIncident,
     addIncidentNote,
     updateRunbookStep,
@@ -126,7 +124,7 @@ export function IncidentDetail() {
       </Card>
 
       {/* Tabs */}
-      <Tabs tabs={tabs} activeTab={activeTab} onTabChange={setActiveTab} />
+      <Tabs tabs={tabs} activeTab={activeTab} onTabChange={(tabId) => setActiveTab(tabId as typeof activeTab)} />
 
       {/* Tab Content */}
       {activeTab === 'summary' && (

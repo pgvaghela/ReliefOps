@@ -88,7 +88,7 @@ export function generateSeedData() {
       severity: randomChoice(['warning', 'error', 'error', 'critical']),
       sourceType: 'shelter',
       sourceId: shelter.id,
-      title: `Sample Alert ${i + 1}: ${shelter.name} at ${Math.round((shelter.capacityUsed / shelter.capacityTotal) * 100)}% capacity`,
+      title: `Sample Alert ${i + 1}: ${shelter.name} at ${shelter.capacityUsed !== null && shelter.capacityTotal !== null && shelter.capacityTotal > 0 ? Math.round((shelter.capacityUsed / shelter.capacityTotal) * 100) : 0}% capacity`,
       signal: 'Sample operational alert',
       evidence: [
         `Current capacity: ${shelter.capacityUsed}/${shelter.capacityTotal}`,
